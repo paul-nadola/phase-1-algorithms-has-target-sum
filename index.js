@@ -1,13 +1,33 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
-}
+
+    const map = []
+    for (let i = 0; i < array.length; i++) {
+      const complement = target - array[i];
+      if (map[complement] !== undefined) {
+        return true;
+      }
+      map[array[i]] = i;
+    }
+    return false;
+  }
+  
+
+
+
 
 /* 
   Write the Big O time complexity of your function here
+  O(n**2)
 */
 
 /* 
   Add your pseudocode here
+  Declare a function with two parameters
+  declare an empty array called map
+  initiate a for loop with a constant complement which is the result of
+  target - array[i], this will be in map
+  if the result is is the array then the condition is satisfied
 */
 
 /*
